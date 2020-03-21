@@ -1,0 +1,9 @@
+{
+  "name": "gt",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "gtts": "^0.2.1"
+  }
+}
