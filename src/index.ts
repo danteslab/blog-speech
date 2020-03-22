@@ -1,7 +1,7 @@
 import * as gTTS from 'gtts'
 import { spawn } from 'child_process'
-import { Scrapper } from './modules/Scrapper'
-import { DevtoStrategy } from './modules/strategies/devto.strategy'
+import { Scrapper } from './modules/scrapper'
+import { DevtoStrategy } from './modules/scrapper'
 
 const scrapper = new Scrapper()
 
