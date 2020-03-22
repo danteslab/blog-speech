@@ -7,9 +7,19 @@ export class DevtoStrategy extends BaseStrategy implements Strategy {
     super('devto')
   }
 
-  async loadHtml(uri: string): Promise<string> {
-    const res = await this.loadFromUri(uri)
-    console.log('Dante: DevtoStrategy -> res', res)
-    return 'Traduce esto'
+  async loadTextFromUri(uri: string): Promise<string> {
+    const html = await this.loadFromUri(uri)
+
+    const $ = cheerio.load(html)
+
+    const mainTitle = $('#main-title')
+
+    const title = mainTitle.find('h1').text()
+    const by = `by  ${mainTitle.find('h3 span span').text()}.`
+    const body = $('#article-body').text()
+
+    const text = title + by + body
+
+    return text
   }
 }

@@ -14,7 +14,7 @@ async function main() {
     'devto',
     'https://dev.to/singh1114/create-react-based-blog-using-netlify-cms-and-gatsby-2c21'
   )
-  const gtts = new gTTS(text, 'es')
+  const gtts = new gTTS(text, 'en')
 
   gtts.save(filePath, (err, result) => {
     if (err) {

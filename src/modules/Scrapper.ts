@@ -16,8 +16,7 @@ export class Scrapper {
   }
 
   async getText(strategyName: string, uri: string): Promise<string> {
-    const res = await this.strategies[strategyName].loadHtml(uri)
-    console.log('Dante: Scrapper -> res', res)
-    return 'jojo'
+    const text = await this.strategies[strategyName].loadTextFromUri(uri)
+    return text
   }
 }
