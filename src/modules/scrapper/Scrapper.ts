@@ -22,8 +22,23 @@ export class Scrapper {
     return this
   }
 
+  unuse(name: string) {
+    delete this.strategies[name]
+
+    return this
+  }
+
   async getText(strategyName: string, uri: string): Promise<string> {
-    const text = await this.strategies[strategyName].loadTextFromUri(uri)
+    const text = await this.strategy(strategyName).loadTextFromUri(uri)
+
     return text
+  }
+
+  private strategy(name: string): Strategy {
+    if (!this.strategies[name]) {
+      throw new Error('Strategy not found')
+    }
+
+    return this.strategies[name]
   }
 }
