@@ -4,7 +4,7 @@ import { Strategy } from './strategy.interface'
 
 export class DanteCalderonStrategy extends BaseStrategy implements Strategy {
   constructor() {
-    super('dantecalderon')
+    super('dantecalderon', 'https://dantecalderon.dev')
   }
 
   async loadTextFromUri(uri: string): Promise<string> {

@@ -1,10 +1,13 @@
 import fetch from 'node-fetch'
+import { UrlValidator } from '../../urlValidator'
 
 export class BaseStrategy {
-  private name
+  private name: string
+  private validator: UrlValidator
 
-  constructor(name) {
+  constructor(name: string, baseUrl: string) {
     this.name = name
+    this.validator = new UrlValidator(baseUrl)
   }
 
   getName(): string {
@@ -12,6 +15,8 @@ export class BaseStrategy {
   }
 
   protected async loadFromUri(uri): Promise<string> {
+    this.validator.validate(uri)
+
     return await fetch(uri).then(res => res.text())
   }
 }

@@ -14,7 +14,7 @@ scrapper
 const filePath = '/tmp/hello.mp3'
 
 async function main() {
-  const text = await scrapper.getText('danti', 'https://dantecalderon.dev/blog/happy-new-year-2020')
+  const text = await scrapper.getText('danti', 'https://dantecalderodn.dev/blog/happy-new-year-2020')
   const gtts = new gTTS(text, 'es')
 
   gtts.save(filePath, (err, result) => {

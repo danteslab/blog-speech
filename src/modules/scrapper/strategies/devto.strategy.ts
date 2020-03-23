@@ -4,7 +4,7 @@ import { Strategy } from './strategy.interface'
 
 export class DevtoStrategy extends BaseStrategy implements Strategy {
   constructor() {
-    super('devto')
+    super('devto', 'https://dev.to')
   }
 
   async loadTextFromUri(uri: string): Promise<string> {

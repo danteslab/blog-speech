@@ -424,6 +424,11 @@ is-utf8@^0.2.0:
   resolved "https://registry.yarnpkg.com/is-utf8/-/is-utf8-0.2.1.tgz#4b0da1442104d1b336340e80797e865cf39f7d72"
   integrity sha1-Sw2hRCEE0bM2NA6AeX6GXPOffXI=
 
+is-valid-http-url@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/is-valid-http-url/-/is-valid-http-url-1.0.3.tgz#ced7d289299a534fdafdbf993d963f8a576e445d"
+  integrity sha512-lrPp25k/Ft3HdusDBdXqne9lNKDtN0HWIHNuC9cfzuFBLlay/gyQeBJukUR1smjyp+zw+gJ5E9wHonpcE9kiCQ==
+
 isarray@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/isarray/-/isarray-1.0.0.tgz#bb935d48582cba168c06834957a54a3e07124f11"
