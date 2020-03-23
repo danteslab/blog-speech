@@ -18,6 +18,8 @@ export class Scrapper {
     } else {
       this.strategies[(name as Strategy).getName()] = name
     }
+
+    return this
   }
 
   async getText(strategyName: string, uri: string): Promise<string> {

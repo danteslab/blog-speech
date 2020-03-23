@@ -6,9 +6,10 @@ import { DanteCalderonStrategy } from './modules/scrapper/strategies/dantecalder
 
 const scrapper = new Scrapper()
 
-scrapper.use(new DevtoStrategy())
-scrapper.use(new DanteCalderonStrategy())
-scrapper.use('danti', new DanteCalderonStrategy())
+scrapper
+  .use(new DevtoStrategy())
+  .use(new DanteCalderonStrategy())
+  .use('danti', new DanteCalderonStrategy())
 
 const filePath = '/tmp/hello.mp3'
 
