@@ -11,8 +11,13 @@ export class Scrapper {
     this.strategies = {}
   }
 
-  use(strategy: Strategy) {
-    this.strategies[strategy.getName()] = strategy
+  use(name: string | Strategy, strategy?: Strategy) {
+    if (typeof name === 'string') {
+      if (!strategy) throw new Error('Scrapper must have a strategy instance')
+      this.strategies[name] = strategy
+    } else {
+      this.strategies[(name as Strategy).getName()] = name
+    }
   }
 
   async getText(strategyName: string, uri: string): Promise<string> {

@@ -8,14 +8,12 @@ const scrapper = new Scrapper()
 
 scrapper.use(new DevtoStrategy())
 scrapper.use(new DanteCalderonStrategy())
+scrapper.use('danti', new DanteCalderonStrategy())
 
 const filePath = '/tmp/hello.mp3'
 
 async function main() {
-  const text = await scrapper.getText(
-    'dantecalderon',
-    'https://dantecalderon.dev/blog/caso-de-uso-obteniendo-documentos-aleatorios-en-mongodb'
-  )
+  const text = await scrapper.getText('danti', 'https://dantecalderon.dev/blog/happy-new-year-2020')
   const gtts = new gTTS(text, 'es')
 
   gtts.save(filePath, (err, result) => {
